@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=popuppalette
+X-Python-2-Compatible=false
+Name=Popup Palette
+Name[en_GB]=Popup Palette
+Comment=Popup Palette plugin
+Comment[en_GB]=Popup Palette plugin

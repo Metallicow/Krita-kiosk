@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionCollection version="2" name="Scripts">
+    <Actions category="Scripts">
+        <text>Popup Palette</text>
+
+        <Action name="showpopuppalette">
+            <icon></icon>
+            <text>Show Popup Palette</text>
+            <whatsThis></whatsThis>
+            <toolTip></toolTip>
+            <iconText></iconText>
+            <activationFlags>10000</activationFlags>
+            <activationConditions>0</activationConditions>
+            <shortcut>Z</shortcut>
+            <isCheckable>false</isCheckable>
+            <statusTip></statusTip>
+        </Action>
+
+    </Actions>
+</ActionCollection>
