@@ -240,6 +240,21 @@ class PopupPaletteFrame(QDialog):
 
         view0.setForeGroundColor(managedColor)
 
+    def updateKritaBackGroundColor(self, color):
+        instance = krita.Krita.instance()
+        views = instance.views()
+        view0 = views[0]
+
+        managedColor = krita.ManagedColor("RGBA", "U8", "")
+        colorComponents = managedColor.components()
+        colorComponents[0] = color.blueF()    # b
+        colorComponents[1] = color.greenF()   # g
+        colorComponents[2] = color.redF()     # r
+        colorComponents[3] = color.alphaF()   # a
+        managedColor.setComponents(colorComponents)
+
+        view0.setBackGroundColor(managedColor)
+
     def mousePressEvent(self, event):
         if event.button() == Qt.MiddleButton:
             self.offset = event.globalPos() - self.frameGeometry().topLeft()
@@ -260,7 +275,7 @@ class PopupPaletteFrame(QDialog):
             self.bgcolor = color
             ## print(color.redF(), color.greenF(), color.blueF(), color.alphaF())  # print values from a QColor
             if krita:
-                self.updateKritaForeGroundColor(color)
+                self.updateKritaBackGroundColor(color)
             self.drawGUI()
             self.update()  # Refresh the drawn colors.
         elif event.buttons() == Qt.XButton1:
